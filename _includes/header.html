@@ -1,0 +1,24 @@
+<header>
+    <nav>
+        <ul>
+            <li><img src="/assets/img/me.png" width="100" height="100" style="border-radius: 50%; position:absolute;z-index: 100; left: -45px; top: -55px;"><!--i class="fa fa-paper-plane-o"></i--></li>
+			<!--get the nav links in  _config.yml -->
+			{% for link in site.nav %}
+			<li><a href="{{ site.baseurl }}/{{ link[1]}}">{{ link[0] }}</a></li>
+			{% endfor %}
+        </ul>1
+        <div style="text-align: center;">
+            <span style="background-color: #fff; display: inline-block;">
+                "A year from now you may wish you had started today." -Karen Lamb
+            </span>
+        </div>
+    </nav>
+
+    {% if page.previous %}
+    <a id="oldPostBtn" class="btn nav-button" href="{{ site.baseurl }}{{ page.previous.url }}" title="Previous"><i class="btn fa fa-3x fa-angle-left"></i></a>
+    {% endif %}
+
+    {% if page.next %}
+    <a id="nextPostBtn" class="btn nav-button" href="{{ site.baseurl }}{{ page.next.url }}" title="Next"><i class="btn fa fa-3x fa-angle-right"></i></a>
+    {% endif %}
+</header>
